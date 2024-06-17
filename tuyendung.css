@@ -1,0 +1,353 @@
+h5{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 18px;
+    font-family: inherit;
+    font-weight: 200;
+    line-height: 1.1;
+}
+table {
+    background-color: transparent;
+}
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    unicode-bidi: isolate;
+    border-color: inherit;
+}
+th {
+    text-align: left;
+}
+td {
+    display: table-cell;
+    vertical-align: inherit;
+    unicode-bidi: isolate;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-areas:
+        "iphone-frame jd"
+        "iphone-frame address-tuyendung"
+        "main-content-3 main-content-3";
+    gap: 20px;
+    margin-top: 120px;
+}
+
+.iphone-frame, .jd,
+.address_tuyendung,
+.main-content-3 {
+    box-shadow: 0 5px 20px rgb(0 0 0 / 40%);
+    border-radius: 10px;
+    padding: 1px;
+    margin-bottom: 20px;
+}
+
+.container_content {
+    display: flex;
+    gap: 30px;
+    margin-top: 10px;
+    color: black;
+}
+.main-content-1 {
+    position: relative; 
+    display: flex;
+    width: 40%;
+    color: black;
+}
+.main-content-2 {
+    position: relative; 
+    display: flex;
+    width: 60%;
+    margin-right: 70px;
+    color: black;
+}
+.main-content-3 {
+    grid-area: main-content-3;
+    position: relative;
+    margin: 30px;
+    color: black;
+}
+.iphone-frame {
+    grid-area: iphone-frame;
+    top: 1%;
+    margin: 0 auto;
+    width: 240px;
+    height: 410px;
+    border: 5px solid black;
+    border-radius: 35px;
+    padding: 10px;
+    box-shadow: 0 0 100px rgba(0,0,0,0.5);
+    position: relative;
+}
+.iphone-frame:before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 7px;
+    width: 12px;
+    height: 12px;
+    background: #000000;
+    border-radius: 10px;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+.iphone-frame:after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+    width: 40%;
+    height: 2px;
+    background: #ccc;
+    border-radius: 10px;
+    transform: translateX(-50%);
+}
+.iphone-screen {
+    background: #e44242;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.time {
+    position: absolute;
+    top: 3px;
+    left: 20px;
+    font-size: 10px;
+}
+.pin {
+    position: absolute;
+    width: 20px;
+    height: 10px;
+    top: 3px;
+    right: 20px;
+    border: 1px solid #333;
+    border-radius: 4px;
+    display: flex;
+}
+.pin .th {
+    background-color: #ccc;
+    position: sticky;
+    width: 77%;
+    height: 90%;
+    top: 11.7%;
+    border-radius: 3px;
+    border-color: #e44242;
+    transition: width 0.6s ease;
+    z-index: 1;
+}
+.pin_phantram {
+    position: absolute;
+    top: -2px;
+    right: 2px;
+    font-size: 8px;
+    z-index: 2;
+    left: 1px;
+}
+.call_name {
+    position: absolute;
+    top: 45px;
+    right: 85px;
+    font-size: 35px;
+    color: white;
+    left: -100px;
+}
+.bubble {
+    position: absolute;
+    background-color: white;
+    border-radius: 50px;
+    width: 100px;
+    height: 100px;
+    top: 130px;
+    right: 45px;
+    text-align: center;
+    font-size: 18px;
+}
+.bubble text {
+    position: absolute;
+    top: 23px;
+    left: 13px;
+    z-index: 1;
+}
+/* Tạo animation bóng nổ */
+@keyframes floatBubble {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+.sub-bubble {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    background-color: rgba(255, 255, 255, 0.5);
+    animation: floatBubble 3s infinite ease-in-out;
+}
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+        transform: translateX(-0.7px);
+    }
+    20%, 40%, 60%, 80% {
+        transform: translateX(0.7px);
+    }
+}
+.shake_animation {
+    animation: shake 0.5s infinite;
+}
+.accept_button, .deline_button {
+    display: flex;
+    position: absolute;
+    bottom: 20%;
+    color: white;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.accept_button {
+    background-color: #27da2d;
+    left: 150px;
+}
+.deline_button {
+    background-color: #fe1100;
+    left: 35px;
+}
+.button_text {
+    position: absolute;
+    bottom: -20px;
+    width: 60px;
+    text-align: center;
+    font-size: 11px;
+    left: -5px;
+}
+.fa_phone {
+    position: absolute;
+    top: 25%;
+    left: 30%;
+    font-size: 20px;
+}
+.hr_content {
+    position: relative;
+    top: 1.5%;
+    right: 0;
+    width: 100%;
+    height: 20px;
+    line-height: 20px;
+}
+.jd {
+    grid-area: jd;
+    position: relative;
+    text-align: left;
+    font-size: 14px;
+    box-shadow: 0 5px 20px rgb(0 0 0 / 40%);
+    border-radius: 10px;
+    padding: 1px;
+}
+.address_tuyendung {
+    grid-area: address-tuyendung;
+    margin-top: -35px;
+    position: relative;
+    text-align: center;
+    font-size: 14px;
+    top: 0px;
+    height: 185px;
+    box-shadow: 0 5px 20px rgb(0 0 0 / 40%);
+    border-radius: 10px;
+}
+.location {
+    position: relative;
+    top: 10px;
+}
+
+.col1, .col3 {
+    height: 2px;
+    width: 30%;
+    background-color: #000000;
+}
+.col2 {
+    flex-grow: 1;
+    text-align: center;
+}
+.col2_2 i {
+    font-size: 15px;
+}
+.title_list {
+    margin-top: 50px;
+    text-align: center;
+    font-size: large;
+}
+.list {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 14px;
+    margin-right: -30px;
+}
+.list_post {
+    width: 30%;
+    line-height: 25px;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 5px 20px rgb(0 0 0 / 40%);
+    margin: 15px 15px;
+}
+.ngay_tuyen {
+    margin-right: 27px;
+}
+.note {
+    text-align: center;
+    margin: 0 auto;
+    height: 40px;
+    line-height: 40px;
+    width: 500px;
+    background-color: #000000;
+    color: #ffffff;
+}
+
+@media only screen and (max-width: 768px) {
+    .grid-container {
+        grid-template-areas:
+            "iphone-frame"
+            "jd"
+            "address-tuyendung"
+            "main-content-3";
+    }
+    .iphone-frame {
+        margin-top: 25px;
+    }
+    .jd {
+        height: 230px;
+        width: 96%;
+        left: 10px;
+    }
+    .address_tuyendung {
+        height: 250px;
+        width: 96%;
+        left: 10px;
+    }
+    .main-content-3 {
+        width: 95%;
+        height: 1400px;
+        margin: 0 auto;
+        box-sizing: border-box;
+        .list_post {
+            width: 88%;
+        }
+    }
+    .note {
+        width: 85%;
+        height: fit-content;
+    }
+}

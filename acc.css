@@ -1,0 +1,220 @@
+input[type="text"], input[type="password"], input[type="email"] {
+    width: 100%;
+    height: 30px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+input[type="button"] {
+    width: 100%;
+    height: 40px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+input[type="button"]:hover {
+    background-color: #3e8e41;
+}
+.nickname_input {
+    width: 50%;
+    max-width: 300px;
+    text-align: center;
+    margin: 0 auto;
+    border: none;
+    outline: none;
+}
+.nickname_input:focus {
+    max-width: 100%;
+}
+
+.myapp-btn {
+    z-index: 10;
+    color: #ffffff;
+    background-color: #343a40;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 36px;
+    margin: 0 0 2em;
+    max-width: 250px; 
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 100%; 
+}
+.btn-1 {
+    font-weight: 100;
+    transition: all .25s;
+    svg {
+        height: 45px;
+        left: 0;
+        position: absolute;
+        top: 0; 
+        width: 100%; 
+    }
+    rect {
+        fill: none;
+        stroke: #fff;
+        stroke-width: 2;
+        stroke-dasharray: 422, 0;
+        transition-delay: none;
+    }
+}
+.btn-1:hover {
+    font-weight: 900;
+    font-size: 16px;
+    letter-spacing: 2px;
+    rect {
+        stroke-width: 5;
+        stroke-dasharray: 15, 310;
+        stroke-dashoffset: 48;
+        transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+}
+.btn-1.color-green:hover {
+    color: green;
+    rect {
+        stroke: green;
+    }
+}
+.btn-1.color-blue:hover {
+    color: blue;
+    rect {
+        stroke: blue;
+    }
+}
+.btn-1 {
+    transition: all 0.5s ease-in-out;
+}
+
+.highlighted_text {
+    font-size: 1.5em;
+    position: relative;
+    display: inline-block;
+    color: #000;
+    padding: 10px;
+    overflow: hidden;
+}
+.highlighted_text:before, .highlighted_text:after, .highlighted_text span:before, .highlighted_text span:after {
+    content: "";
+    position: absolute;
+    background: #e83030;
+    animation: border_animation 2s linear infinite;
+}
+.highlighted_text:before, .highlighted_text:after {
+    height: 1px;
+    width: 1px;
+}
+.highlighted_text span:before, .highlighted_text span:after {
+    height: 1px;
+    width: 1px;
+}
+.highlighted_text:before {
+    top: 0;
+    left: 0;
+    animation-delay: 0s;
+}
+.highlighted_text:after {
+    bottom: 0;
+    right: 0;
+    animation-delay: 0s;
+}
+.highlighted_text span:before {
+    top: 0;
+    right: 0;
+    animation-delay: 0.6s;
+}
+.highlighted_text span:after {
+    bottom: 0;
+    left: 0;
+    animation-delay: 0.6s;
+}
+@keyframes border_animation {
+    0% {
+        width: 0;
+        height: 0;
+    }
+    25% {
+        width: 100%;
+        height: 1px;
+    }
+    50% {
+        width: 100%;
+        height: 1px;
+    }
+    75% {
+        width: 1px;
+        height: 1px;
+    }
+    100% {
+        width: 0;
+        height: 0;
+    }
+}
+
+.rank_line {
+    width: 100%;
+    height: 5px;
+    background-color: rgb(202, 79, 206);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.4;
+}
+.rankBar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 0 5px 20px #4caf50b3;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+.thoAu {
+    left: 0%;
+    background-color: #28c02d;
+    box-shadow: 0px 1px 25px rgba(209, 17, 209, 0.829);
+}
+/* Tạo animation bóng nổ */
+@keyframes floatBubble {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+.sub-bubbleRank {
+    position: absolute;
+    top: -50px;
+    left: -10px;
+    transform: translate(-50%, -50%) scale(0);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: rgba(241, 25, 241, 0.5);
+    animation: floatBubble 2s infinite ease-in-out;
+    z-index: 0;
+}
+.thieuNien {
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.7;
+}
+.truongThanh {
+    left: 100%;
+    text-align: center;
+    transform: translate(-100%, -50%);
+    opacity: 0.7;
+}

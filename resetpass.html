@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="theme-color" content="#1A94FF">
+
+        <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+        <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+        <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">	
+        <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+        <link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+        <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">	
+        <link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+        <link rel="stylesheet" type="text/css" href="./resetpass.css">
+        <link rel="stylesheet" type="text/css" href="./until.css">
+
+        <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+        <script src="vendor/animsition/js/animsition.min.js"></script>
+        <script src="vendor/bootstrap/js/popper.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+        <script src="vendor/select2/select2.min.js"></script>
+        <script src="vendor/daterangepicker/moment.min.js"></script>
+        <script src="vendor/daterangepicker/daterangepicker.js"></script>
+        <script src="vendor/countdowntime/countdowntime.js"></script>
+        <script src="https://kit.fontawesome.com/96db9e10ba.js"></script>
+
+        <title>Reset Password</title>
+    </head>
+    <body>	
+        <div class="limiter">
+            <div class="container-login100">
+                <div class="wrap-login100">
+                    <form class="login100-form validate-form">
+                        <span class="login100-form-title p-b-34 p-t-27">
+                            Khôi phục tài khoản
+                        </span>
+                        <div class="wrap-input100 validate-input" data-validate = "Enter username">
+                            <input class="input100" type="email" name="username" placeholder="Email">
+                            <input class="input100" type="password" name="pass" placeholder="Mật khẩu gần nhất">
+                        </div>
+                        <div class="container-login100-form-btn">
+                            <button class="login100-form-btn">Gửi</button>
+                        </div>
+                        <div class="text-center">
+                            <span>Đã có tài khoản?</span>
+                            <a class="txt1" href="./register.html">Đăng nhập</a>
+                        </div>
+
+                        <div class="popup-overlay" id="popupOverlay">
+                            <div class="popup" id="popup">
+                                <span class="close" id="closePopup">&times;</span>
+                                <div class="popup-content">
+                                    <strong><i>Bạn có phải là robot?</i></strong>
+                                    <div class="otp">
+                                        <div style="user-select: none" class="otpRandom">                                       </div>
+                                        <input type="text" id="otpInput" placeholder="Nhập...">
+                                    </div>
+                                    <a href="./acc.html">
+                                        <button id="otpSubmit">Xác nhận</button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                var generatedOTP = '';
+                    function showPopup() {
+                        var popup = document.getElementById('popupOverlay');
+                        popup.style.display = 'block';
+                }
+                function closePopup() {
+                    var popup = document.getElementById('popupOverlay');
+                    popup.style.display = 'none';
+                }
+                document.querySelector('.login100-form-btn').addEventListener('click', function(event) {
+                    event.preventDefault();
+                    showPopup();
+                    generateOTP();
+                });
+                document.getElementById('closePopup').addEventListener('click', closePopup);
+                //Ngăn popup tự đóng khi nhấn trong vùng thuộc popup
+                document.getElementById('popup').addEventListener('click', function(event) {
+                    event.stopPropagation(); //Ngăn sự kiện lan ra khỏi popup
+                });
+                // Đóng popup khi nhấn vùng ngoài popup
+                document.getElementById('popupOverlay').addEventListener('click', closePopup);
+                function generateOTP() {
+                    let digits = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+                    generatedOTP = '';
+                    for (let i = 0; i < 5; i++) {
+                        generatedOTP += digits[Math.floor(Math.random() * digits.length)];
+                    }
+                    document.querySelector('.otpRandom').innerHTML = generatedOTP;
+                }
+                document.querySelector('#otpSubmit').addEventListener('click', function (event) {
+                    event.preventDefault(); //Chặn hành động mặc định
+                    var inputOTP = document.querySelector('#otpInput').value;
+                    //Kiểm tra đúng sai
+                    if(inputOTP === generatedOTP) {
+                        window.location.href = './acc.html';
+                    } else {
+                        showCustomAlert('Chúng tôi không tin bạn là robot, vui lòng nhập lại!');
+                        document.querySelector('#otpInput').value = ''; 
+                    }
+                });
+                function showCustomAlert(message) {
+                    var alertBox = document.createElement('div');
+                    alertBox.innerHTML = message;
+                    alertBox.className = 'custom-alert';
+                    document.body.appendChild(alertBox);
+                    //Thông báo biến mất từ từ
+                    setTimeout(function() {
+                        alertBox.classList.add('hide');
+                        setTimeout(function() {
+                            document.body.removeChild(alertBox);
+                        }, 500);
+                    }, 1000);
+                }
+
+                document.querySelector('#otpInput').addEventListener('keypress', function (event) {
+                    if (event.key === 'Enter') {
+                        event.preventDefault(); //Chặn hành động mặc định
+                        var inputOTP = document.querySelector('#otpInput').value;
+                        if(inputOTP === generatedOTP) {
+                            window.location.href = './acc.html';
+                        } else {
+                            showCustomAlert('Chúng tôi không tin bạn là robot, vui lòng nhập lại!');
+                            document.querySelector('#otpInput').value = ''; 
+                        }
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>

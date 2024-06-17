@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+          <meta name="theme-color" content="#1A94FF">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Allura&family=Arizonia&family=Chewy&family=Dancing+Script:wght@400..700&family=Marck+Script&family=Parisienne&family=Satisfy&display=swap" rel="stylesheet">
+        
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+        <script src="https://kit.fontawesome.com/96db9e10ba.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.2/font/bootstrap-icons.min.css">
+        <link rel="stylesheet" href="./admin.css">
+        
+        <title>Archive Admin</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light " id="navbar">
+            <span style="margin-left: 30px">
+                <a class="navbar-brand" href="#"><strong style="box-shadow: 5px 5px 5px red">ARCHIVE</strong></a>
+            </span>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav" style="margin-right: 150px; z-index: 100;">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fa-solid fa-expand"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fa-regular fa-moon"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fa-regular fa-bell"></i></a>
+                    </li>
+                    <li class="nav-item" style="cursor: pointer; position: relative">
+                        <div class="nav-admin">
+                            <img src="./Imggg/avt/avt_admin.jpg">
+                            <i class="fa-solid fa-angle-down"></i>
+                            <div class="dropdown-card">
+                                <strong>ARCHIVE</strong>
+                                <ul class="dropdown-card-list">
+                                    <li>
+                                        <div class="dropdown-card-list-item">
+                                            <a href="#"><i class="fa-regular fa-address-card" style="margin-right: 10px"></i>Hồ sơ của tôi</a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="dropdown-card-list-item">
+                                            <a href="#"><i class="fa-brands fa-signal-messenger" style="margin-right: 11px"></i>Lời nhắn</a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="dropdown-card-list-item">
+                                            <a href="#"><i class="fa-solid fa-gears" style="margin-right: 7px"></i>Cài đặt</a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="dropdown-card-list-item">
+                                            <a href="./register.html"><i class="fa-solid fa-right-from-bracket" style="margin-right: 11px"></i>Đăng xuất</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        
+        <div class="d-flex" id="wrapper" style="padding: 5px; margin-top: 10px">
+            <div class="bg-light border-right" id="sidebar-wrapper">
+                <div id="choose" class="list-group list-group-flush">
+                    <a href="#" id="menu" class="list-group-item list-group-item-action bg-light"><i class="fa-solid fa-chart-simple"></i> Thống kê</a>
+                    <a href="#" id="menu" class="list-group-item list-group-item-action bg-light"><i class="fa-solid fa-boxes-stacked"></i> Đơn hàng</a>
+                    <a href="#" id="menu" class="list-group-item list-group-item-action bg-light"><i class="fa-solid fa-mug-hot"></i> Sản phẩm</a>
+                    <a href="#" id="menu" class="list-group-item list-group-item-action bg-light"><i class="fa-solid fa-money-check-dollar"></i> Khuyến mãi</a>
+                    <a href="#" id="menu" class="list-group-item list-group-item-action bg-light"><i class="fa-solid fa-users-line"></i> Nhân viên</a>
+                    <a href="#" id="menu" class="list-group-item list-group-item-action bg-light"><i class="fa-regular fa-user"></i> Hội viên</a>
+                    <a href="#" id="menu" class="list-group-item list-group-item-action bg-light"><i class="fa-regular fa-envelope"></i> Lắng nghe</a>
+                    <a href="#" id="menu" class="list-group-item list-group-item-action bg-light"><i class="fa-solid fa-gear"></i> Cài đặt</a>
+                </div>
+            </div>
+            <div id="content-area" style="flex-grow: 1; margin-top: 70px">
+                <div class="row mg-top-10" style="justify-content: center">
+                    <div class="col-lg-3 col-md-6 col-12" style="width: 30%">
+                        <div class="card">
+                            <div class="card-icon">
+                                <i class="fa-solid fa-hand-holding-dollar"></i>
+                            </div>
+                            <div class="card-content">
+                                <div class="card-content-heading">
+                                    <span class="card-title">Tổng số bán</span>
+                                    <h5>
+                                        <b>57.604.200.000 VND</b>
+                                    </h5>
+                                </div>
+                                <div class="card-view">
+                                    <p class="card-view-number">
+                                        <i class="fa-solid fa-arrow-up"></i>+23.78%
+                                    </p>
+                                    <a href="#" class="card-view-all">Thu nhập</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-12" style="width: 30%">
+                        <div class="card">
+                            <div class="card-icon">
+                                <i class="fa-solid fa-boxes-stacked"></i>
+                            </div>
+                            <div class="card-content">
+                                <div class="card-content-heading">
+                                    <span class="card-title">Tổng số đơn</span>
+                                    <h5>
+                                        <b>480.035</b>
+                                    </h5>
+                                </div>
+                                <div class="card-view">
+                                    <p class="card-view-number">
+                                        <i class="fa-solid fa-arrow-down"></i>+60.88%
+                                    </p>
+                                    <a href="#" class="card-view-all">Tổng đơn hàng</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-12" style="width: 30%">
+                        <div class="card">
+                            <div class="card-icon">
+                                <i class="fa-solid fa-users"></i>
+                            </div>
+                            <div class="card-content">
+                                <div class="card-content-heading">
+                                    <span class="card-title">Khách ghé thăm</span>
+                                    <h5>
+                                        <b>312410</b>
+                                    </h5>
+                                </div>
+                                <div class="card-view">
+                                    <p class="card-view-number">
+                                        <i class="fa-solid fa-arrow-up"></i>+12.12%
+                                    </p>
+                                    <a href="#" class="card-view-all">Xem chi tiết</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row row2">
+                    <div class="col-lg-6 cl-12" style="box-shadow: 0 0 10px rgba(0,0,0,0.5); width: 47%">
+                        <div style="padding: 20px; border-radius: 5px">
+                            <div class="row-heading">
+                                <h4>Tổng số bán</h4>
+                                <div class="row2-tab">
+                                    <a href="#" class="list-group-item" data-bs-toggle="list" role="tab">
+                                        Tuần
+                                    </a>
+                                    <a href="#" class="list-group-item active" data-bs-toggle="list" role="tab">
+                                        Tháng
+                                    </a>
+                                    <a href="#" class="list-group-item" data-bs-toggle="list" role="tab">
+                                        Năm
+                                    </a>
+                                </div>
+                            </div>
+                            <div style="margin: -20px 0 20px 0; font-size: 14px">
+                                <span>Số bán năm 2023</span>
+                            </div>
+                            <div class="tab-content" id="nav-tabContent">
+                                <div class="tab-pane fade active show" id="tab1" role="tabpanel" aria-labelledby="tab1">
+                                    <div class="chart">
+                                        <canvas id="myChart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 cl-12" style="box-shadow: 0 0 10px rgba(0,0,0,0.5); width: 47%">
+                        <div class="row2-left" style="padding: 5px; margin-top: 10px;">
+                            <div class="row-heading">
+                                <h4>Thống kê</h4>
+                            </div>
+                            <div class="row2-tab-right">
+                                <div class="row2-tab-right-left">
+                                    <ul style="gap: 50px; display: flex; list-style-type: none; padding: 0;">
+                                        <li>
+                                            <span class="right-left-list list1"></span>
+                                            <span>Lợi nhuận</span>
+                                            <span>267.890.000</span>
+                                        </li>
+                                        <li>
+                                            <span class="right-left-list list2"></span>
+                                            <span>Hoàn vốn</span>
+                                            <span>672.914.000</span>
+                                        </li>
+                                        <li>
+                                            <span class="right-left-list list3"></span>
+                                            <span>Chi phí</span>
+                                            <span>302.390.000</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="row2-tab-right-right">
+                                    <form>
+                                        <div class="mb-3">
+                                            <select class="form-select" id="transactionType">
+                                                <option selected>7 ngày</option>
+                                                <option>15 ngày</option>
+                                                <option>Tháng</option>
+                                            </select>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="row2-right-chart">
+                                <canvas id="myChart2"></canvas>
+                                <div class="tab-content" id="nav-tabContent">
+                                    <div class="tab-pane fade active show" id="tab1" role="tabpanel" aria-labelledby="tab2">
+                                        <div class="chart">
+                                            <canvas id="myChart2"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12" style="padding: 20px 65px 0 65px">
+                        <div class="row3">
+                            <div class="row-heading" style="margin-left: 10px">
+                                <h4>Đơn hàng gần đây</h4>
+                            </div>
+                            <table>
+                                <thead class="row3-table-head">
+                                    <tr>
+                                        <th>Mã đơn hàng</th>
+                                        <th>Tên khách hàng</th>
+                                        <th>Sản phẩm chính</th>
+                                        <th>Tổng tiền đơn</th>
+                                        <th>Ngày đặt hàng</th>
+                                        <th>Trạng thái đơn</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="row3-table-body">
+                                    <tr>
+                                        <td class="row3-id">
+                                            <span><a href="#">CK47391</a></span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span><a href="#">Eren</a></span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span>Bánh bông lan Socola</span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span>100.000đ</span>
+                                        </td>
+                                        <td>
+                                            <span class="row3-time"></span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span style="margin-right: -30px">Đang giao</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="row3-id">
+                                            <span><a href="#">MT10363</a></span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span><a href="#">Nhỏ Intern</a></span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span>Trà sữa bạc hà</span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span>512.000đ</span>
+                                        </td>
+                                        <td>
+                                            <span class="row3-time"></span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span style="margin-right: -30px">Đang giao</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="row3-id">
+                                            <span><a href="#">CK75001</a></span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span><a href="#">Hồng Hà</a></span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span>Bánh kem hạnh phúc</span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span>235.000đ</span>
+                                        </td>
+                                        <td>
+                                            <span class="row3-time"></span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span style="margin-right: -30px">Đang giao</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="row3-id">
+                                            <span><a href="#">MT13538</a></span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span><a href="#">Hà Mute</a></span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span>Sữa hoa đậu biếc</span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span>75.000đ</span>
+                                        </td>
+                                        <td>
+                                            <span class="row3-time"></span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span style="margin-right: -30px">Đang giao</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="row3-id">
+                                            <span><a href="#">TE47391</a></span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span><a href="#">Eren</a></span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span>Trà trái cây nhiệt đới</span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span>217.000đ</span>
+                                        </td>
+                                        <td>
+                                            <span class="row3-time"></span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span style="margin-right: -30px">Đang chuẩn bị</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="row3-id">
+                                            <span><a href="#">CF60383</a></span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span><a href="#">David</a></span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span>Cappucinno</span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span>565.000đ</span>
+                                        </td>
+                                        <td>
+                                            <span class="row3-time"></span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span style="margin-right: -30px">Đang chuẩn bị</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="row3-id">
+                                            <span><a href="#">TP23284</a></span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span><a href="#">Samche</a></span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span>Trà Bá Tước</span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span>1.484.000đ</span>
+                                        </td>
+                                        <td>
+                                            <span class="row3-time"></span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span style="margin-right: -30px">Đang chuẩn bị</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="row3-id">
+                                            <span><a href="#">TP23294</a></span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span><a href="#">Don Quijote</a></span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span>Trà trắng Paimutan</span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span>2.500.000đ</span>
+                                        </td>
+                                        <td>
+                                            <span class="row3-time"></span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span style="margin-right: -30px">Đang chuẩn bị</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="row3-id">
+                                            <span><a href="#">BR83603</a></span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span><a href="#">Hà Trương</a></span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span>Bánh mì kẹp tôm</span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span>135.000đ</span>
+                                        </td>
+                                        <td>
+                                            <span class="row3-time"></span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span style="margin-right: -30px">Đang chuẩn bị</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="row3-id">
+                                            <span><a href="#">TE82611</a></span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span><a href="#">Trương Mộng</a></span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span>Trà vải hoa hồng</span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span>265.000đ</span>
+                                        </td>
+                                        <td>
+                                            <span class="row3-time"></span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span style="margin-right: -30px">Đang chuẩn bị</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="row3-id">
+                                            <span><a href="#">CF87359</a></span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span><a href="#">Cruella de Vil</a></span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span>Cà phê muối</span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span>90.000đ</span>
+                                        </td>
+                                        <td>
+                                            <span class="row3-time"></span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span style="margin-right: -30px">Đã giao</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="row3-id">
+                                            <span><a href="#">CF62738</a></span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span><a href="#">Quasimodo</a></span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span>Cà phê Macchiato</span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span>124.000đ</span>
+                                        </td>
+                                        <td>
+                                            <span class="row3-time"></span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span style="margin-right: -30px">Đã giao</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="row3-id">
+                                            <span><a href="#">CK60928</a></span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span><a href="#">Sebastian</a></span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span>Bánh chanh dây</span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span>80.000đ</span>
+                                        </td>
+                                        <td>
+                                            <span class="row3-time"></span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span style="margin-right: -30px">Đã giao</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="row3-id">
+                                            <span><a href="#">MT23294</a></span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span><a href="#">Morisaki</a></span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span>Trà sữa trứng nướng</span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span>625.000đ</span>
+                                        </td>
+                                        <td>
+                                            <span class="row3-yes"></span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span style="margin-right: -30px">Đã giao</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="row3-id">
+                                            <span><a href="#">MT23295</a></span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span><a href="#">Scarlett O'Hara</a></span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span>Macaron</span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span>80.000đ</span>
+                                        </td>
+                                        <td>
+                                            <span class="row3-yes"></span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span style="margin-right: -30px">Đã giao</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="row3-id">
+                                            <span><a href="#">CK63590</a></span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span><a href="#">Evil Queen</a></span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span>Nước ép chanh leo</span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span>90.537.000đ</span>
+                                        </td>
+                                        <td>
+                                            <span class="row3-yes"></span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span style="margin-right: -30px">Đã giao</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="row3-id">
+                                            <span><a href="#">TP23295</a></span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span><a href="#">Floria</a></span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span>Ấm trà cối xay Tử Sa</span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span>56.100.000đ</span>
+                                        </td>
+                                        <td>
+                                            <span class="row3-yes"></span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span style="margin-right: -30px">Đã giao</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="row3-id">
+                                            <span><a href="#">JC10363</a></span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span><a href="#">Henry</a></span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span>Nước ép cam x cà rốt</span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span>754.000đ</span>
+                                        </td>
+                                        <td>
+                                            <span class="row3-yes"></span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span style="margin-right: -30px">Đã giao</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="row3-id">
+                                            <span><a href="#">CK47392</a></span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span><a href="#">Ame Yuki</a></span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span>Mille Feuille</span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span>157.000đ</span>
+                                        </td>
+                                        <td>
+                                            <span class="row3-yes"></span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span style="margin-right: -30px">Đã giao</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="row3-id">
+                                            <span><a href="#">CF47391</a></span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span><a href="#">Ghost</a></span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span>Cà phê cốt dừa</span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span>97.000đ</span>
+                                        </td>
+                                        <td>
+                                            <span class="row3-yes"></span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span style="margin-right: -30px">Đã giao</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="row3-id">
+                                            <span><a href="#">CF47390</a></span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span><a href="#">Mortal Kombat</a></span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span>Cà phê Mocha</span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span>42.000đ</span>
+                                        </td>
+                                        <td>
+                                            <span class="row3-yes"></span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span style="margin-right: -30px">Đã giao</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="row3-id">
+                                            <span><a href="#">GI63824</a></span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span><a href="#">Mortal Kombat</a></span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span>Cacao đá tuyết kem cheese</span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span>92.000đ</span>
+                                        </td>
+                                        <td>
+                                            <span class="row3-yes"></span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span style="margin-right: -30px">Đã giao</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="row3-id">
+                                            <span><a href="#">CK63590</a></span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span><a href="#">Judge Doom</a></span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span>Mousse Tiramisu</span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span>190.000đ</span>
+                                        </td>
+                                        <td>
+                                            <span class="row3-yes"></span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span style="margin-right: -30px">Đã giao</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="row3-id">
+                                            <span><a href="#">CK63590</a></span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span><a href="#">Medusa</a></span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span>Trà hoa Rum</span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span>1.600.000đ</span>
+                                        </td>
+                                        <td>
+                                            <span class="row3-yes"></span>
+                                        </td>
+                                        <td class="row3-id">
+                                            <span style="margin-right: -30px">Đã giao</span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                    <div class="row">
+                        <div class="col-12" style="padding: 20px 65px 0 65px">
+                            <div class="row4">
+                                <div class="row-heading" style="margin-left: 10px">
+                                    <h4>Best sellers tuần</h4>
+                                </div>
+                                <div class="row4-slider">
+                                    <button class="row4-slider-arrow">
+                                        <i class="fa-solid fa-angle-left"></i>
+                                    </button>
+                                    <button class="row4-slider-arrow" style="margin-left: 40px">
+                                        <i class="fa-solid fa-angle-right"></i>
+                                    </button>
+                                    <div class="row4-list">
+                                        <div class="row4-list-track">
+                                            <div class="row4-list-item" style="display: flex;">
+                                                <div class="item">
+                                                    <img src="./Imggg/Cà phê mocha.jpg">
+                                                    <div class="row4-list-item-track">
+                                                        <h6>Cà phê Mocha</h6>
+                                                        <h6>42.000đ</h6>
+                                                    </div>
+                                                </div>
+                                                <div class="item">
+                                                    <img src="./Imggg/kiwidaxay.jpg">
+                                                    <div class="row4-list-item-track">
+                                                        <h6>Kiwi đá tuyết</h6>
+                                                        <h6>50.000đ</h6>
+                                                    </div>
+                                                </div>
+                                                <div class="item">
+                                                    <img src="Imggg/trà đào cam xả.png">
+                                                    <div class="row4-list-item-track">
+                                                        <h6>Trà đào cam sả</h6>
+                                                        <h6>50.000đ</h6>
+                                                    </div>
+                                                </div>
+                                                <div class="item">
+                                                    <img src="Imggg/trà hoa hồng vải.png">
+                                                    <div class="row4-list-item-track">
+                                                        <h6>Trà hoa hồng vải</h6>
+                                                        <h6>55.000đ</h6>
+                                                    </div>
+                                                </div>
+                                                <div class="item">
+                                                    <img src="Imggg/Latte nóng.jpg">
+                                                    <div class="row4-list-item-track">
+                                                        <h6>Cà phê Latte nóng</h6>
+                                                        <h6>50.000đ</h6>
+                                                    </div>
+                                                </div>
+                                                <div class="item">
+                                                    <img src="Imggg/Nước ép cam cà rốt.jpg">
+                                                    <div class="row4-list-item-track">
+                                                        <h6>Nước ép cam x cà rốt</h6>
+                                                        <h6>37.000đ</h6>
+                                                    </div>
+                                                </div>
+                                                <div class="item">
+                                                    <img src="Imggg/Bánh ngọt - mặn/Mille Feuille – bánh ngàn chiếc lá.jpg">
+                                                    <div class="row4-list-item-track">
+                                                        <h6>Bánh ngàn chiếc lá</h6>
+                                                        <h6>45.000đ</h6>
+                                                    </div>
+                                                </div>
+                                                <div class="item">
+                                                    <img src="Imggg/Bánh ngọt - mặn/Bánh Mousse Tiramisu.jpg">
+                                                    <div class="row4-list-item-track">
+                                                        <h6>Mousse Tiramisu</h6>
+                                                        <h6>45.000đ</h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <footer>
+            <span class="copyright">©2024 bản quyền này thuộc về Archive</span>
+        </footer>
+
+        <script src="./admin.js"></script>
+    </body>
+</html>

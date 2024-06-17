@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+          <meta name="theme-color" content="#1A94FF">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Allura&family=Arizonia&family=Chewy&family=Dancing+Script:wght@400..700&family=Marck+Script&family=Parisienne&family=Satisfy&display=swap" rel="stylesheet">
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+        <script src="https://kit.fontawesome.com/96db9e10ba.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.2/font/bootstrap-icons.min.css">
+        <link rel="stylesheet" href="./main.css">
+        
+        <title>Archive</title>
+    </head>
+    <body>
+        <header class="container-fluid " id="menu">
+            <div class="row backgroud_head_1">
+                <div class="col-md-2 d-flex justify-content-center align-items-center d-none d-sm-block">
+                    <a href="index.html" style="text-decoration: none; text-align: center;">
+                        <img class="img-fluid mx-auto d-block  highlighted_text" width="100" height="36"
+                            src="Imggg/Logo.png">
+                        <p style="color: black; margin-bottom: 3px;">Thân thiện - Gìn giữ</p>
+                    </a>
+                </div>
+                <div class="col-md-6 d-flex justify-content-center align-items-center d-none d-sm-block">
+                    <a href="index.html" style="text-decoration: none;">
+                        <img class="img-fluid mx-auto d-block" width="100" height="36" src="Imggg/hello-8628461_1280.png">
+                    </a>
+                </div>
+                <!--giỏ hàng-->
+                <div class="col d-flex align-items-end align-items-center">
+                    <div class="row w-100">
+                        <div class="col d-flex justify-content-center align-items-center">
+                            <button class="btn" data-bs-toggle="modal" data-bs-target="#exampleModalLabel">
+                                <a href="#" class="text-decoration-none text-dark position-relative">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    <span class="ml-2">Giỏ hàng</span>
+                                    <span
+                                        class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                                        id="cart-number">
+                                        0
+                                        <span class="visually-hidden"></span>
+                                    </span>
+                                </a>
+                            </button>
+                        </div>
+                        <!--giỏ hàng-->
+                        <div class="modal fade" id="exampleModalLabel" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Giỏ hàng của bạn</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <ul class="list-group" id="cartItems">
+                                            <!-- Cart items will be injected here -->
+                                        </ul>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <div id="total" class="font-weight-bold">Total: $0</div>
+                                        <button type="button" class="btn btn-secondary">
+                                            <a class="button_order" href="./address.html">Đặt hàng</a>
+                                        </button>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="modal fade" id="order" tabindex="-1" aria-labelledby="" aria-hidden="true">
+                            <div class="modal-xl modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title modal-title_" id="order_3">Món bạn lựa chọn</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="row ">
+                                            <div class="col-md-4 ">
+                                                <img src="" class="img-thumbnail" id="hinh_anh_product" alt="">
+                                            </div>
+                                            <div class="col ">
+                                                <div class="row ">
+                                                    <div class="col  d-flex justify-content-left" style="font-size:40px;"
+                                                        id="name_product">Sản phẩm :
+                                                    </div>
+                                                </div>
+                                                <div class="row ">
+                                                    <div class="col" id="gia_product">Giá</div>
+                                                </div>
+                                                <div class="row ">
+                                                    <div class="col  d-flex justify-content-left">
+                                                        <div class="text_order">Chọn size ly</div>
+                                                        <select class="form-select" id="size">
+                                                            <option value="size s">Size S</option>
+                                                            <option value="size m">Size M( +5.000 đ)</option>
+                                                            <option value="size l">Size L( +10.000 đ)</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col  d-flex justify-content-left">
+                                                        <div class="text_order">Tỉ lệ đường</div>
+                                                        <select class="form-select" id="duong">
+                                                            <option value="0% đường">0% đường</option>
+                                                            <option value="70% đường">70% đường</option>
+                                                            <option value="50% đường">50% đường</option>
+                                                            <option value="100% đường">100% đường</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col  d-flex justify-content-left">
+                                                        <div class="text_order">Tỉ lệ đá</div>
+                                                        <select class="form-select" id="da">
+                                                            <option value="0% đá">0% đá</option>
+                                                            <option value="70% đá">70% đá</option>
+                                                            <option value="50% đá">50% đá</option>
+                                                            <option value="100% đá">100% đá</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="row  ">
+                                                        <div class="col ">
+                                                            <div class="text_order">Chọn topping</div>
+                                                            <select class="form-select" id="topping">
+                                                                <option value="Không lựa chọn">Không lựa chọn </option>
+                                                                <option value="Thạch sương sáo">Thạch sương sáo ( +10.000 )
+                                                                </option>
+                                                                <option value="kem phô mai">Kem phô mai ( +15.000 )</option>
+                                                                <option value="Trân châu trắng">Trân châu trắng ( +10.000 )
+                                                                </option>
+                                                                <option value="Trân châu đường đen">Trân châu đường đen (
+                                                                    +10.000 )</option>
+                                                                <option value="Thạch dứa">Thạch dứa ( +10.000 )</option>
+                                                                <option value="Thạch dừa">Thạch dừa ( +10.000 )</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col"
+                                                            style="font-family: 'Times New Roman', Times, serif;">Số lượng
+                                                            <input id="soluong" type="number" class="btn btn-light number"
+                                                                min="1">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <div id="total" class="font-weight-bold">Total: $0</div>
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Close</button>
+                                        <button class="btn btn-secondary" id="order_4">
+                                            <div class="bi bi-cart-plus" id="thongbao_"></div>
+                                        </button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="modal fade" id="thongbao" tabindex="-1" aria-labelledby="thongbao" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content" style="background-color:rgb(232, 229, 229)">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Thành công</h5>
+                                    </div>
+                                    <div class="modal-body">
+                                        Sản phẩm đã được thêm vào giỏ hàng!
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col d-flex justify-content-center align-items-center">
+                            <div class="dropdown">
+                                <a href="#" class="text-decoration-none text-dark position-relative">
+                                    <i class="fa-regular fa-bell fa-1x"></i>
+                                    <span
+                                        class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                        0
+                                        <span class="visually-hidden"></span>
+                                    </span>
+                                    <span class="ml-2">Thông Báo</span>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right p-3">
+                                    <h6 class="dropdown-header">Thông Báo</h6>
+                                    <div class="dropdown-divider"></div>
+                                    <p class="mb-0">Không có thông báo mới</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col d-flex justify-content-center align-items-center">
+                            <a href="./register.html" class="text-decoration-none text-dark position-relative">
+                                <i class="fas fa-user"></i>
+                                <span class="ml-2">Đăng nhập</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row backgroud_head_2">
+                <div class="col-md-1 d-flex justify-content-center header_2_1 d-none d-sm-block">
+                    <a href="bestseller.html"><i class="bi bi-cup-hot-fill"></i></a>
+                </div>
+                <div class="col header_2_1">
+                    <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4" style="margin-top:0;">
+                        <div class="input-group">
+                            <input type="search" id="search_inp" placeholder="Nhập từ bạn cần tìm?"
+                                aria-describedby="button-addon1" class="form-control input_find bg-light"
+                                style="border-radius: 20px 20px 20px 20px;">
+                            <div class="input-group-append">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dropdown-menu dropdown-menu-dark" id="resultDropdown">
+                        <!-- Kết quả tìm kiếm sẽ được thêm vào đây -->
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <nav class="navbar navbar-expand-lg navbar-light">
+                        <div class="container">
+                            <button class="navbar-toggler btn-responsive" type="button" data-toggle="collapse"
+                                data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                                aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon">
+                                    <div class="menu">Menu</div>
+                                </span>
+                            </button>
+                            <div class="collapse navbar-collapse header_2_3" id="navbarNav">
+                                <ul class="navbar-nav ml-auto">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="index.html">TRANG CHỦ</a>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="drinks.html" id="navbarDropdownMenuLink"
+                                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            ĐỒ UỐNG
+                                        </a>
+                                        <ul class="dropdown-menu dropdown-menu-dark"
+                                            aria-labelledby="navbarDropdownMenuLink">
+                                            <li><a class="dropdown-item" href="drinks.html">Đồ uống</a></li>
+                                            <li><a class="dropdown-item" href="coffee.html">Cà phê</a></li>
+                                            <li><a class="dropdown-item" href="daxay.html">Đá xay</a></li>
+                                            <li><a class="dropdown-item" href="tea.html">Trà</a></li>
+                                            <li><a class="dropdown-item" href="juice.html">Nước ép</a></li>
+                                            <li><a class="dropdown-item" href="teapot.html">Bình trà</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="cake.html" id="navbarDropdownMenuLink"
+                                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            BÁNH
+                                        </a>
+                                        <ul class="dropdown-menu dropdown-menu-dark"
+                                            aria-labelledby="navbarDropdownMenuLink">
+                                            <li><a class="dropdown-item" href="cake.html">Bánh</a></li>
+                                            <li><a class="dropdown-item text_5" href="cake_sweet.html">Bánh ngọt - Bánh
+                                                    mặn</a></li>
+                                            <li><a class="dropdown-item text_5" href="cake_bread.html">Bánh mì</a></li>
+                                            <li><a class="dropdown-item" href="cake_ice.html">Bánh kem</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="cake.html" id="navbarDropdownMenuLink"
+                                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            KHUYẾN MÃI
+                                        </a>
+                                        <ul class="dropdown-menu dropdown-menu-dark"
+                                            aria-labelledby="navbarDropdownMenuLink">
+                                            <li><a class="dropdown-item" href="voucher.html">Nước uống</a></li>
+                                            <li><a class="dropdown-item text_5" href="vourchercake.html">Bánh ngon</a></li>
+
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="card.html">THẺ HỘI VIÊN</a>
+                                    </li>
+                                     <li class="nav-item">
+                                    <a class="nav-link" href="tuyendung.html">TUYỂN DỤNG</a>
+                                </li>
+                                <li class="nav-item">
+                                    <button id="switch-mode">
+                                        <i class="bi bi-moon-stars-fill"></i>
+                                    </button>
+                                </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+
+        <div id="demo" class="carousel slide carousel_bg" data-bs-ride="carousel">
+        <!-- Indicators/dots -->
+        <ol class="carousel-indicators">
+            <li  data-bs-target="#demo"  data-bs-slide-to="0" class="active"></li>
+            <li  data-bs-target="#demo"  data-bs-slide-to="1"></li>
+            <li  data-bs-target="#demo"  data-bs-slide-to="2"></li>
+        </ol>
+        <!-- The slideshow/carousel -->
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div id="mua"></div>
+                <img src="Imggg/avt/hinhanh_1.jpg" class="img-fluid d-block w-100" alt="">
+                <div class="carousel-caption">
+                    <div class="responsive-text_">Coffee</div>
+                    <h3 class="responsive-text">Tách cà phê buổi sáng mang đến niềm hứng khởi và sức mạnh mà
+                        tách trà buổi chiều hay buổi tối không thể nào mang lại được như thế</h3>
+                    <div class="container d-flex justify-content-center">
+                        <div class="cr_link ">
+                            <a class="responsive-text" href="./coffee.html">Coffee</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div id="mua_1"></div>
+                <img src="Imggg/avt/Tea.jpg"
+                    class="img-fluid" alt="">
+                <div class="carousel-caption">
+                    <div class="responsive-text_">Tea</div>
+                    <h3 class="responsive-text trang1">Uống trà không chỉ là một thói quen, mà còn là một nghệ thuật
+                        tinh
+                        tế, nơi những tách trà trở thành bức tranh của những cảm xúc và suy tư</h3>
+                    <div class="container d-flex justify-content-center">
+                        <div class="cr_link ">
+                            <a class="responsive-text" href="./tea.html">Tea</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div id="mua_3"></div>
+                <img src="Imggg/avt/unnamed.jpg" class="img-fluid" alt="">
+                <div class="carousel-caption">
+                    <div class="responsive-text_">Cake</div>
+                    <h3 class="responsive-text trang2">Bánh ngọt không chỉ là một món tráng miệng đơn giản mà còn là
+                        biểu
+                        tượng của sự ngọt ngào và hạnh phúc</h3>
+                    <div class="container d-flex justify-content-center">
+                        <div class="cr_link ">
+                            <a class="responsive-text" href="./cake.html">Cake</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- Left and right controls/icons -->
+        <a class="carousel-control-prev" href="#demo" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#demo" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+    </div>
+
+
+
+        <div class="container" style="margin-top: 50px;">
+            <div class="row">
+                <div class="col">
+                    <div class="bg-light rounded rounded-pill shadow-sm mb-4 ">
+                        <div class="input-group">
+                            <input type="search" id="search_inp_product" placeholder="Nhập từ bạn cần tìm?" aria-describedby="button-addon1"
+                                class=" form-control input_find bg-light"  style="border-radius: 20px 20px 20px 20px;">
+                        </div>
+                    </div>
+                </div>
+                <div class="col" > 
+                    <select class="form-select" id="sortSelect" style="width: 300px; font-family: 'Times New Roman', Times, serif;"> 
+                        <option value="default"> Giá (Mặc định)</option>
+                        <option value="asc">Từ thấp đến cao</option>
+                        <option value="desc">Từ cao đến thấp</option>
+                    </select>
+                </div>
+                <div class="col"><button class="btn btn-light" id="sortButton">Sắp xếp</button></div>
+            </div>
+        </div>
+
+        <div class="fame_4_text_index" data-aos="fade-up">Sản phẩm nước</div>
+        <div class="container d-flex justify-content-center" style="border-top: 1px solid black;">
+            <div class="frame_6_index d-flex">
+                <img class="img-fluid" src="./Imggg/avt/logo.jpg" alt="">
+            </div>
+        </div>
+        <div class="container-fluid" data-aos="fade-up">
+            <div class="frame_5">
+                <div id="mua_5"></div>
+                <div class="frame_5_1">
+                    <div class="sanpham">
+                        <img src="Imggg/bạc xỉu.png" alt="">
+                    </div>
+                    <div class="frame_5_1_1">
+                        <div class="name">Bạc sỉu</div>
+                        <div class="gia_voucher">45.000 đ</div>
+                        <div class="gia">25.000 đ</div>
+                        <button class="lienhe" data-bs-toggle="modal" data-bs-target="#order"> Đặt
+                            hàng
+                        </button>
+                        
+                    </div>
+                </div>
+                <div class="frame_5_1">
+                    <div class="sanpham">
+                        <img src="Imggg/Cà-Phê-NL-đen-nóng-2.jpg" alt="">
+                    </div>
+                    <div class="frame_5_1_1">
+                        <div class="name">Cà phê đen</div>
+                        <div class="gia">45.000 đ</div>
+                        <button class="lienhe" data-bs-toggle="modal" data-bs-target="#order"> Đặt
+                            hàng
+                        </button>
+                        
+                    </div>
+                </div>
+                <div class="frame_5_1">
+                    <div class="sanpham">
+                        <img src="Imggg/Cà phê sữa.jpg" alt="">
+                    </div>
+                    <div class="frame_5_1_1">
+                        <div class="name">Cà phê sữa</div>
+                        <div class="gia">45.000 đ</div>
+                        <button class="lienhe" data-bs-toggle="modal" data-bs-target="#order"> Đặt
+                            hàng
+                        </button>
+                        
+                    </div>
+                </div>
+                <div class="frame_5_1">
+                    <div class="sanpham">
+                        <img src="Imggg/caphemuoi.webp" alt="">
+                    </div>
+                    <div class="frame_5_1_1">
+                        <div class="name">Cà phê muối</div>
+                        <div class="gia">45.000 đ</div>
+                        <button class="lienhe" data-bs-toggle="modal" data-bs-target="#order"> Đặt
+                            hàng
+                        </button>
+                        
+                    </div>
+                </div>
+                <div class="frame_5_1">
+                    <div class="sanpham">
+                        <img src="Imggg/Latte nóng.jpg" alt="">
+                    </div>
+                    <div class="frame_5_1_1">
+                        <div class="name"> Cà phê Latte nóng</div>
+                        <div class="gia">50.000 đ</div>
+                        <button class="lienhe" data-bs-toggle="modal" data-bs-target="#order"> Đặt
+                            hàng
+                        </button>
+                        
+                    </div>
+                </div>
+                <div class="frame_5_1">
+                    <div class="sanpham">
+                        <img src="Imggg/Americano.jpg" alt="">
+                    </div>
+                    <div class="frame_5_1_1">
+                        <div class="name">Cà phê Americano</div>
+                        <div class="gia">42.000 đ</div>
+                        <button class="lienhe" data-bs-toggle="modal" data-bs-target="#order"> Đặt
+                            hàng
+                        </button>
+                        
+                    </div>
+                </div>
+                <div class="frame_5_1">
+                    <div class="sanpham">
+                        <img src="Imggg/Cà phê Cappucinno.png" alt="">
+                    </div>
+                    <div class="frame_5_1_1">
+                        <div class="name">Cà phê Cappucinno</div>
+                        <div class="gia">50.000 đ</div>
+                        <button class="lienhe" data-bs-toggle="modal" data-bs-target="#order"> Đặt
+                            hàng
+                        </button>
+                        
+                    </div>
+                </div>
+                <div class="frame_5_1">
+                    <div class="sanpham">
+                        <img  style="height: 180px; margin-top: 45px; margin-bottom: 45px;" src="Imggg/Cà phê cốt dừa.jpg" alt="">
+                    </div>
+                    <div class="frame_5_1_1">
+                        <div class="name">Cà phê cốt dừa</div>
+                        <div class="gia">55.000 đ</div>
+                        <button class="lienhe" data-bs-toggle="modal" data-bs-target="#order"> Đặt
+                            hàng
+                        </button>
+                        
+                    </div>
+                </div>
+                <div class="frame_5_1">
+                    <div class="sanpham">
+                        <img src="Imggg/Cà phê Macchiato đá.jpg" alt="">
+                    </div>
+                    <div class="frame_5_1_1">
+                        <div class="name">Cà phê Macchiato</div>
+                        <div class="gia">59.000 đ</div>
+                        <button class="lienhe" data-bs-toggle="modal" data-bs-target="#order"> Đặt
+                            hàng
+                        </button>
+                        
+                    </div>
+                </div>
+                <div class="frame_5_1">
+                    <div class="sanpham">
+                        <img src="Imggg/Cà phê mocha.jpg" alt="">
+                    </div>
+                    <div class="frame_5_1_1">
+                        <div class="name">Cà phê Mocha</div>
+                        <div class="gia">42.000 đ</div>
+                        <button class="lienhe" data-bs-toggle="modal" data-bs-target="#order"> Đặt
+                            hàng
+                        </button>
+                        
+                    </div>
+                </div>
+                <div class="frame_5_1">
+                    <div class="sanpham">
+                        <img src="Imggg/trà trái cây.png" alt="">
+                    </div>
+                    <div class="frame_5_1_1">
+                        <div class="name">Trà trái cây nhiệt đới</div>
+                        <div class="gia_voucher">50.000 đ</div>
+                        <div class="gia">25.000 đ</div>
+                        <button class="lienhe" data-bs-toggle="modal" data-bs-target="#order"> Đặt
+                            hàng
+                        </button>
+                        
+                    </div>
+                </div>
+                <div class="frame_5_1">
+                    <div class="sanpham">
+                        <img src="Imggg/trâmtcha.png" alt="">
+                    </div>
+                    <div class="frame_5_1_1">
+                        <div class="name">Trà matcha</div>
+                        <div class="gia_voucher">35.000 đ</div>
+                        <div class="gia">25.000 đ</div>
+                        <button class="lienhe" data-bs-toggle="modal" data-bs-target="#order"> Đặt
+                            hàng
+                        </button>
+                        
+                    </div>
+                </div>
+                <div class="frame_5_1">
+                    <div class="sanpham">
+                        <img src="Imggg/trachanh2.jpeg" alt="">
+                    </div>
+                    <div class="frame_5_1_1">
+                        <div class="name">Trà chanh đá </div>
+                        <div class="gia" id="gia">25.000 đ</div>
+                        <button class="lienhe" data-bs-toggle="modal" data-bs-target="#order"> Đặt
+                            hàng
+                        </button>
+                        
+                    </div>
+                </div>
+                <div class="frame_5_1">
+                    <div class="sanpham">
+                        <img src="Imggg/trà đào.png" alt="">
+                    </div>
+                    <div class="frame_5_1_1">
+                        <div class="name">Trà đào</div>
+                        <div class="gia" id="gia_1">25.000 đ</div>
+                        <button class="lienhe" data-bs-toggle="modal" data-bs-target="#order"> Đặt
+                            hàng
+                        </button>
+                        
+                    </div>
+                </div>
+                <div class="frame_5_1">
+                    <div class="sanpham">
+                        <img src="Imggg/trà đào cam xả.png" alt="">
+                    </div>
+                    <div class="frame_5_1_1">
+                        <div class="name">Trà đào cam xả</div>
+                        <div class="gia" id="gia_1">30.000 đ</div>
+                        <button class="lienhe" data-bs-toggle="modal" data-bs-target="#order"> Đặt
+                            hàng
+                        </button>
+                        
+                    </div>
+                </div>
+                <div class="frame_5_1">
+                    <div class="sanpham">
+                        <img src="Imggg/trà dâu_1.webp" alt="">
+                    </div>
+                    <div class="frame_5_1_1">
+                        <div class="name">Trà dâu</div>
+                        <div class="gia" id="gia_2">25.000 đ</div>
+                        <button class="lienhe" data-bs-toggle="modal" data-bs-target="#order"> Đặt
+                            hàng
+                        </button>
+                        
+                    </div>
+                </div>
+                <div class="frame_5_1">
+                    <div class="sanpham">
+                        <img src="Imggg/TRA VAI HOA HONG(2).png" alt="">
+                    </div>
+                    <div class="frame_5_1_1">
+                        <div class="name">Trà vải hoa hồng</div>
+                        <div class="gia" id="gia_3">60.000 đ</div>
+                        <button class="lienhe" data-bs-toggle="modal" data-bs-target="#order"> Đặt
+                            hàng
+                        </button>
+                        
+                    </div>
+                </div>
+                <div class="frame_5_1">
+                    <div class="sanpham">
+                        <img src="Imggg/trà chanh mật ong.webp" alt="">
+                    </div>
+                    <div class="frame_5_1_1">
+                        <div class="name">Trà tranh mật ong</div>
+                        <div class="gia" id="gia_3">40.000 đ</div>
+                        <button class="lienhe" data-bs-toggle="modal" data-bs-target="#order"> Đặt
+                            hàng
+                        </button>
+                        
+                    </div>
+                </div>
+                <div class="frame_5_1">
+                    <div class="sanpham">
+                        <img src="Imggg/tra gừng mật ong.png" alt="">
+                    </div>
+                    <div class="frame_5_1_1">
+                        <div class="name">Trà gừng mật ong</div>
+                        <div class="gia" id="gia_3">30.000 đ</div>
+                        <button class="lienhe" data-bs-toggle="modal" data-bs-target="#order"> Đặt
+                            hàng
+                        </button>
+                        
+                    </div>
+                </div>
+                <div class="frame_5_1">
+                    <div class="sanpham">
+                        <img src="Imggg/trà hoa hồng vải.png" alt="">
+                    </div>
+                    <div class="frame_5_1_1">
+                        <div class="name">Trà hoa hồng vải</div>
+                        <div class="gia" id="gia_3">55.000 đ</div>
+                        <button class="lienhe" data-bs-toggle="modal" data-bs-target="#order"> Đặt
+                            hàng
+                        </button>
+                        
+                    </div>
+                </div>
+                <div class="frame_5_1">
+                    <div class="sanpham">
+                        <img src="Imggg/trà đào _1.png" alt="">
+                    </div>
+                    <div class="frame_5_1_1">
+                        <div class="name">Hồng trà đào</div>
+                        <div class="gia" id="gia_3">45.000 đ</div>
+                        <button class="lienhe" data-bs-toggle="modal" data-bs-target="#order"> Đặt
+                            hàng
+                        </button>
+                        
+                    </div>
+                </div>
+                <div class="frame_5_1">
+                    <div class="sanpham">
+                        <img src="Imggg/trà hoa cúc.png" alt="">
+                    </div>
+                    <div class="frame_5_1_1">
+                        <div class="name">Trà hoa cúc</div>
+                        <div class="gia" id="gia_3">35.000 đ</div>
+                        <button class="lienhe" data-bs-toggle="modal" data-bs-target="#order"> Đặt
+                            hàng
+                        </button>
+                        
+                    </div>
+                </div>
+                <div class="frame_5_1">
+                    <div class="sanpham">
+                        <img src="Imggg/Trà sen vàng.jpg" alt="">
+                    </div>
+                    <div class="frame_5_1_1">
+                        <div class="name">Trà sen vàng</div>
+                        <div class="gia" id="gia_3">35.000 đ</div>
+                        <button class="lienhe" data-bs-toggle="modal" data-bs-target="#order"> Đặt
+                            hàng
+                        </button>
+                        
+                    </div>
+                </div>
+                <div class="frame_5_1">
+                    <div class="sanpham">
+                        <img src="Imggg/Trà nhãn.jpg" alt="">
+                    </div>
+                    <div class="frame_5_1_1">
+                        <div class="name">Trà nhãn</div>
+                        <div class="gia" id="gia_3">30.000 đ</div>
+                        <button class="lienhe" data-bs-toggle="modal" data-bs-target="#order"> Đặt
+                            hàng
+                        </button>
+                        
+                    </div>
+                </div>
+                <div class="frame_5_1">
+                    <div class="sanpham">
+                        <img src="Imggg/trà sữa bạc hà.jpg" alt="">
+                    </div>
+                    <div class="frame_5_1_1">
+                        <div class="name">Trà sữa bạc hà</div>
+                        <div class="gia" id="gia_3">35.000 đ</div>
+                        <button class="lienhe" data-bs-toggle="modal" data-bs-target="#order"> Đặt
+                            hàng
+                        </button>
+                        
+                    </div>
+                </div>
+                <div class="frame_5_1">
+                    <div class="sanpham">
+                        <img src="Imggg/trasocola.jpg" alt="">
+                    </div>
+                    <div class="frame_5_1_1">
+                        <div class="name">Trà sữa Socola</div>
+                        <div class="gia">45.000 đ</div>
+                        <button class="lienhe" data-bs-toggle="modal" data-bs-target="#order"> Đặt
+                            hàng
+                        </button>
+                        
+                    </div>
+                </div>
+                <div class="frame_5_1">
+                    <div class="sanpham">
+                        <img src="Imggg/Trà sữa trứng nướng.jpg" alt="">
+                    </div>
+                    <div class="frame_5_1_1">
+                        <div class="name">Trà sữa trứng nướng</div>
+                        <div class="gia" id="gia_3">55.000 đ</div>
+                        <button class="lienhe" data-bs-toggle="modal" data-bs-target="#order"> Đặt
+                            hàng
+                        </button>
+                        
+                    </div>
+                </div>
+                <div class="frame_5_1">
+                    <div class="sanpham">
+                        <img src="Imggg/sữa hoa đậu biếc.jpg" alt="">
+                    </div>
+                    <div class="frame_5_1_1">
+                        <div class="name">Sữa hoa đậu biếc</div>
+                        <div class="gia" id="gia_3">50.000 đ</div>
+                        <button class="lienhe" data-bs-toggle="modal" data-bs-target="#order"> Đặt
+                            hàng
+                        </button>
+                        
+                    </div>
+                </div>
+                <div class="frame_5_1">
+                    <div class="sanpham">
+                        <img src="Imggg/cà phê đá xay.png" alt="">
+                    </div>
+                    <div class="frame_5_1_1">
+                        <div class="name">Cà phê đá tuyết </div>
+                        <div class="gia" id="gia">35.000 đ</div>
+                        <button class="lienhe" data-bs-toggle="modal" data-bs-target="#order"> Đặt
+                            hàng
+                        </button>
+                        
+                    </div>
+                </div>
+                <div class="frame_5_1">
+                    <div class="sanpham">
+                        <img src="Imggg/Đào việt quất đá xay.jpg" alt="">
+                    </div>
+                    <div class="frame_5_1_1">
+                        <div class="name">Đào việt quất đá tuyết</div>
+                        <div class="gia" id="gia_1">45.000 đ</div>
+                        <button class="lienhe" data-bs-toggle="modal" data-bs-target="#order"> Đặt
+                            hàng
+                        </button>
+                        
+                    </div>
+                </div>
+                <div class="frame_5_1">
+                    <div class="sanpham">
+                        <img src="Imggg/matcha đá xay.png" alt="">
+                    </div>
+                    <div class="frame_5_1_1">
+                        <div class="name">Matcha đá tuyết</div>
+                        <div class="gia" id="gia_2">25.000 đ</div>
+                        <button class="lienhe" data-bs-toggle="modal" data-bs-target="#order"> Đặt
+                            hàng
+                        </button>
+                        
+                    </div>
+                </div>
+                <div class="frame_5_1">
+                    <div class="sanpham">
+                        <img src="Imggg/dâu tây đá xay.png" alt="">
+                    </div>
+                    <div class="frame_5_1_1">
+                        <div class="name">Dâu tây đá tuyết</div>
+                        <div class="gia" id="gia_3">50.000 đ</div>
+                        <button class="lienhe" data-bs-toggle="modal" data-bs-target="#order"> Đặt
+                            hàng
+                        </button>
+                        
+                    </div>
+                </div>
+                <div class="frame_5_1">
+                    <div class="sanpham">
+                        <img src="Imggg/đá xay việt quất 1.jpg" alt="">
+                    </div>
+                    <div class="frame_5_1_1">
+                        <div class="name">Việt quất đá tuyết</div>
+                        <div class="gia" id="gia_3">50.000 đ</div>
+                        <button class="lienhe" data-bs-toggle="modal" data-bs-target="#order"> Đặt
+                            hàng
+                        </button>
+                        
+                    </div>
+                </div>
+                <div class="frame_5_1">
+                    <div class="sanpham">
+                        <img src="Imggg/cacaodaxay.png" alt="">
+                    </div>
+                    <div class="frame_5_1_1">
+                        <div class="name">Cacao đá tuyết kem chesse</div>
+                        <div class="gia" id="gia_3">50.000 đ</div>
+                        <button class="lienhe" data-bs-toggle="modal" data-bs-target="#order"> Đặt
+                            hàng
+                        </button>
+                        
+                    </div>
+                </div>
+                <div class="frame_5_1">
+                    <div class="sanpham">
+                        <img src="Imggg/bạc hà đá xay.jpg" alt="">
+                    </div>
+                    <div class="frame_5_1_1">
+                        <div class="name">Bạc hà đá tuyết kem chesse</div>
+                        <div class="gia" id="gia_3">50.000 đ</div>
+                        <button class="lienhe" data-bs-toggle="modal" data-bs-target="#order"> Đặt
+                            hàng
+                        </button>
+                        
+                    </div>
+                </div>
+                <div class="frame_5_1">
+                    <div class="sanpham">
+                        <img src="Imggg/kiwidaxay.jpg" alt="">
+                    </div>
+                    <div class="frame_5_1_1">
+                        <div class="name">Kiwi đá tuyết</div>
+                        <div class="gia" id="gia_3">50.000 đ</div>
+                        <button class="lienhe" data-bs-toggle="modal" data-bs-target="#order"> Đặt
+                            hàng
+                        </button>
+                        
+                    </div>
+                </div>
+                <div class="frame_5_1">
+                    <div class="sanpham">
+                        <img src="Imggg/bơxay_1.jpg" alt="">
+                    </div>
+                    <div class="frame_5_1_1">
+                        <div class="name">Bơ đá béo ngậy</div>
+                        <div class="gia" id="gia_3">50.000 đ</div>
+                        <button class="lienhe" data-bs-toggle="modal" data-bs-target="#order"> Đặt
+                            hàng
+                        </button>
+                        
+                    </div>
+                </div>
+                <div class="frame_5_1">
+                    <div class="sanpham">
+                        <img src="Imggg/nuoc-ep-dua-hau.jpg" alt="">
+                    </div>
+                    <div class="frame_5_1_1">
+                        <div class="name">Nước ép dưa hấu</div>
+                        <div class="gia" id="gia">35.000 đ</div>
+                        <button class="lienhe" data-bs-toggle="modal" data-bs-target="#order"> Đặt
+                            hàng
+                        </button>
+                        
+                    </div>
+                </div>
+                <div class="frame_5_1">
+                    <div class="sanpham">
+                        <img src="Imggg/nước ép cam.png" alt="">
+                    </div>
+                    <div class="frame_5_1_1">
+                        <div class="name">Nước ép cam</div>
+                        <div class="gia" id="gia_1">45.000 đ</div>
+                        <button class="lienhe" data-bs-toggle="modal" data-bs-target="#order"> Đặt
+                            hàng
+                        </button>
+                        
+                    </div>
+                </div>
+                <div class="frame_5_1">
+                    <div class="sanpham">
+                        <img src="Imggg/nước ép dứa.webp" alt="">
+                    </div>
+                    <div class="frame_5_1_1">
+                        <div class="name">Nước ép thơm</div>
+                        <div class="gia" id="gia_2">25.000 đ</div>
+                        <button class="lienhe" data-bs-toggle="modal" data-bs-target="#order"> Đặt
+                            hàng
+                        </button>
+                        
+                    </div>
+                </div>
+                <div class="frame_5_1">
+                    <div class="sanpham">
+                        <img src="Imggg/nước ép táo _1.jpg" alt="">
+                    </div>
+                    <div class="frame_5_1_1">
+                        <div class="name">Nước ép táo</div>
+                        <div class="gia" id="gia_3">30.000 đ</div>
+                        <button class="lienhe" data-bs-toggle="modal" data-bs-target="#order"> Đặt
+                            hàng
+                        </button>
+                        
+                    </div>
+                </div>
+                <div class="frame_5_1">
+                    <div class="sanpham">
+                        <img src="Imggg/nước ép dâu.webp" alt="">
+                    </div>
+                    <div class="frame_5_1_1">
+                        <div class="name">Nước ép dâu</div>
+                        <div class="gia" id="gia_3">20.000 đ</div>
+                        <button class="lienhe" data-bs-toggle="modal" data-bs-target="#order"> Đặt
+                            hàng
+                        </button>
+                        
+                    </div>
+                </div>
+                <div class="frame_5_1">
+                    <div class="sanpham">
+                        <img src="Imggg/nước ép kiwi.jpg" alt="">
+                    </div>
+                    <div class="frame_5_1_1">
+                        <div class="name">Nước ép kiwi</div>
+                        <div class="gia" id="gia_3">30.000 đ</div>
+                        <button class="lienhe" data-bs-toggle="modal" data-bs-target="#order"> Đặt
+                            hàng
+                        </button>
+                        
+                    </div>
+                </div>
+                <div class="frame_5_1">
+                    <div class="sanpham">
+                        <img src="Imggg/Nước ép chanh leo.jpg" alt="">
+                    </div>
+                    <div class="frame_5_1_1">
+                        <div class="name">Nước ép chanh leo</div>
+                        <div class="gia" id="gia_3">37.000 đ</div>
+                        <button class="lienhe" data-bs-toggle="modal" data-bs-target="#order"> Đặt
+                            hàng
+                        </button>
+                        
+                    </div>
+                </div>
+                <div class="frame_5_1">
+                    <div class="sanpham">
+                        <img src="Imggg/nước ép cần tây.jpg" alt="">
+                    </div>
+                    <div class="frame_5_1_1">
+                        <div class="name">Nước ép cần tây</div>
+                        <div class="gia" id="gia_3">37.000 đ</div>
+                        <button class="lienhe" data-bs-toggle="modal" data-bs-target="#order"> Đặt
+                            hàng
+                        </button>
+                        
+                    </div>
+                </div>
+                <div class="frame_5_1">
+                    <div class="sanpham">
+                        <img src="Imggg/nước ép rau má.jpg" alt="">
+                    </div>
+                    <div class="frame_5_1_1">
+                        <div class="name">Nước ép rau má</div>
+                        <div class="gia" id="gia_3">24.000 đ</div>
+                        <button class="lienhe" data-bs-toggle="modal" data-bs-target="#order"> Đặt
+                            hàng
+                        </button>
+                        
+                    </div>
+                </div>
+                <div class="frame_5_1">
+                    <div class="sanpham">
+                        <img src="Imggg/nuoc-mia.jpg" alt="">
+                    </div>
+                    <div class="frame_5_1_1">
+                        <div class="name">Nước mía</div>
+                        <div class="gia" id="gia_3">45.000 đ</div>
+                        <button class="lienhe" data-bs-toggle="modal" data-bs-target="#order"> Đặt
+                            hàng
+                        </button>
+                        
+                    </div>
+                </div>
+                <div class="frame_5_1">
+                    <div class="sanpham">
+                        <img src="Imggg/Nước ép cam cà rốt.jpg" alt="">
+                    </div>
+                    <div class="frame_5_1_1">
+                        <div class="name">Nước ép cam x cà rốt</div>
+                        <div class="gia" id="gia_3">37.000 đ</div>
+                        <button class="lienhe" data-bs-toggle="modal" data-bs-target="#order"> Đặt
+                            hàng
+                        </button>
+                        
+                    </div>
+                </div>
+                <div class="frame_5_1">
+                    <div class="sanpham">
+                        <img src="Imggg/Nước ép táo thơm hạt chia.jpg" alt="">
+                    </div>
+                    <div class="frame_5_1_1">
+                        <div class="name">Nước ép táo thơm hạt chia</div>
+                        <div class="gia" id="gia_3">37.000 đ</div>
+                        <button class="lienhe" data-bs-toggle="modal" data-bs-target="#order"> Đặt
+                            hàng
+                        </button>
+                        
+                    </div>
+                </div>           
+            </div>
+        </div>
+
+       <div class="container-fluid" style="margin-top: 50px;">
+            <footer class="py-4 text-light" style="background-color: rgb(135, 122, 122);">
+                <div class="row ">
+                    <div class="col ">
+                        <div class="logo_1"></div>
+                        <p style="text-align: center; font-size: 26px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+                            Chất lượng làm nên thương hiệu
+                        </p>
+                    </div>
+                    <div class="col-md-5 ">
+                        <div class="footer_text_tilte" style="margin-left: 15px">ARCHIVE</div>
+                        <div class="bi bi-geo-alt footer_text_content">140, đường Lê Trọng Tấn, phường Tây Thạnh,
+                            quận Tân Phú, TP.HCM</div>
+                        <div class="bi bi-telephone footer_text_content"> 0962 762 525</div>
+                        <div class="bi bi-envelope footer_text_content"> archive23_2gmail.com</div>
+                        <div class="footer_text_content">Số DKKD: 8387387282662 Ngày cấp: 23/05/2024</div>
+                        <div style="margin-left: 16px" class="fab fa-facebook"><a href=""></a></div>
+                        <div class="fab fa-instagram"><a href=""></a></div>
+                        <div class="fab fa-twitter"><a href=""></a></div>
+                        <div class="fab fa-youtube"><a href=""></a></div>
+                        <div class="fab fa-google"><a href=""></a></div>
+                    </div>
+                    <div class="col ">
+                        <div class="footer_text_tilte" style="margin-left: 8px">CHÍNH SÁCH</div>
+                        <div><a class="footer_text_content" href="dk_1">Chính sách thành viên</a></div>
+                        <div><a class="footer_text_content" href="dk_2">Hình thức thanh toán</a></div>
+                        <div><a class="footer_text_content" href="dk_3">Vận chuyển giao nhận</a></div>
+                        <div><a class="footer_text_content" href="dk_4">Bảo vệ thông tin cá nhân</a></div>
+                        <div><a class="footer_text_content" href="dk_5">Bảo trì bảo hành</a></div>
+                    </div>
+                </div>
+                <div class="copyright">
+                    <span>©2024 bản quyền này thuộc về Archive</span>
+                </div>
+            </footer>
+        </div>
+        <script>
+            AOS.init({
+                duration: 1000, // Thời gian chạy hiệu ứng (tính bằng ms)
+                once: false, // Hiệu ứng chỉ chạy một lần hay mỗi lần cuộn
+            });
+        </script>
+        
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+        <script src="add to cart.js"></script>
+        <script src="./find.js"></script>
+        <script src="./find_product.js"></script>
+        <script src="./sapxep.js"></script>
+        <script src="./lienhe_.js"></script>
+        <script src="add_order_addtocart.js"></script>
+        <script src="./kithuatmoi.js"></script>
+    <script src="./header.js"></script>
+        <script src="./hieuung1.js"></script>
+        <script src="./hieuung2.js"></script>
+        <script src="./hieuung3.js"></script>
+        <script src="./hieuung4.js"></script>
+        
+    </body>
+</html>
